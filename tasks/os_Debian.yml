@@ -8,7 +8,7 @@
 - name: add repository
   apt_repository:
     repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
-    filename: microsoft.powershell
+    filename: vscode
     state: present
     update_cache: yes
 

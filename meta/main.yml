@@ -156,12 +156,12 @@ galaxy_info:
   #  versions:
   #  - all
   #  - any
-  #- name: EL
-  #  versions:
+  - name: EL
+    versions:
   #  - all
   #  - 5
   #  - 6
-  #  - 7
+    - 7
   #- name: Windows
   #  versions:
   #  - all

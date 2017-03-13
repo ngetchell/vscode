@@ -1,0 +1,13 @@
+- name: set microsoft repo
+  yum_repository:
+    name: code
+    description: vscode
+    file: vscode
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+
+- name: install vscode
+  yum:
+    name: code
+    state: present
+    update_cache: yes

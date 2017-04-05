@@ -11,3 +11,11 @@
     name: code
     state: present
     update_cache: yes
+  when: ansible_pkg_mgr == "yum"
+
+- name: install vscode
+  dnf:
+    name: code
+    state: present
+  when: ansible_pkg_mgr == "dnf"
+

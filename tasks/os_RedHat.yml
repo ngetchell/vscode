@@ -11,11 +11,31 @@
     name: code
     state: present
     update_cache: yes
-  when: ansible_pkg_mgr == "yum"
+  when:
+    - ansible_pkg_mgr == "yum"
+    - vscode_install
 
 - name: install vscode
   dnf:
     name: code
     state: present
-  when: ansible_pkg_mgr == "dnf"
+  when:
+    - ansible_pkg_mgr == "dnf"
+    - vscode_install
 
+- name: install vscode insiders build
+  yum:
+    name: code-insiders
+    state: present
+    update_cache: yes
+  when:
+    - ansible_pkg_mgr == "yum"
+    - vscode_insiders_install
+
+- name: install vscode insiders build
+  dnf:
+    name: code-insiders
+    state: present
+  when:
+    - ansible_pkg_mgr == "dnf"
+    - vscode_insiders_install

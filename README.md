@@ -1,7 +1,7 @@
 VS Code
 =========
 
-A quick way to install VS Code using the Microsoft recommended method. 
+A quick way to install VS Code using the Microsoft recommended method.
 
 Requirements
 ------------
@@ -11,7 +11,11 @@ None
 Role Variables
 --------------
 
-None
+VS Code will install by default. If you want the repository and the insiders build only set this to false.
+  vscode_install: true
+
+To install VS Code insiders build set this to true.
+  vscode_insiders_install: true
 
 Dependencies
 ------------
@@ -26,6 +30,15 @@ Including an example of how to use your role (for instance, with variables passe
     - hosts: servers
       roles:
          - ngetchell.vscode
+
+
+   - hosts: servers
+     roles:
+        - {
+            role: ngetchell.vscode,
+            vscode_install: true,
+            vscode_insiders_install: true
+          }
 
 License
 -------

@@ -16,3 +16,12 @@
   apt:
     name: code
     update_cache: true
+  when:
+    - vscode_install
+
+- name: install vscode insiders
+  apt:
+    name: code-insiders
+    update_cache: true
+  when:
+    - vscode_insiders_install

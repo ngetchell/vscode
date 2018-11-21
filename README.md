@@ -12,10 +12,16 @@ Role Variables
 --------------
 
 VS Code will install by default. If you want the repository and the insiders build only set this to false.
-  vscode_install: true
+
+```yaml
+vscode_install: true
+```
 
 To install VS Code insiders build set this to true.
-  vscode_insiders_install: true
+
+```yaml
+vscode_insiders_install: true
+```
 
 Dependencies
 ------------
@@ -25,20 +31,20 @@ None
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+```yaml
+# role using defaults
+- hosts: servers
+  roles:
+    - ngetchell.vscode
 
-    - hosts: servers
-      roles:
-         - ngetchell.vscode
-
-
-   - hosts: servers
-     roles:
-        - {
-            role: ngetchell.vscode,
-            vscode_install: true,
-            vscode_insiders_install: true
-          }
+# role with variables
+- hosts: servers
+  roles:
+    - role: ngetchell.vscode
+      vars:
+        vscode_install: true
+        vscode_insiders_install: true
+```
 
 License
 -------

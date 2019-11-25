@@ -44,6 +44,17 @@ Example Playbook
       vars:
         vscode_install: true
         vscode_insiders_install: true
+
+# role with extensions
+---
+- hosts: localhost
+  roles:
+    - ngetchell.vscode
+  vars: 
+    vscode_extension: 
+      - ms-python.python
+      - ms-vscode.powershell
+      - ms-vscode.azurecli
 ```
 
 License

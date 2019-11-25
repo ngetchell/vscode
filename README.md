@@ -27,19 +27,25 @@ Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
-      roles:
-         - ngetchell.vscode
+### Simple Installation
 
+```
+- hosts: servers
+  roles:
+      - ngetchell.vscode
+```
 
-   - hosts: servers
-     roles:
-        - {
-            role: ngetchell.vscode,
-            vscode_install: true,
-            vscode_insiders_install: true
-          }
+### Installing Insiders
 
+```
+- hosts: servers
+  roles:
+    - {
+        role: ngetchell.vscode,
+        vscode_install: true,
+        vscode_insiders_install: true
+      }
+```
 License
 -------
 

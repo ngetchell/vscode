@@ -50,8 +50,8 @@ Example Playbook
 - hosts: localhost
   roles:
     - ngetchell.vscode
-  vars: 
-    vscode_extension: 
+  vars:
+    vscode_extension:
       - ms-python.python
       - ms-vscode.powershell
       - ms-vscode.azurecli

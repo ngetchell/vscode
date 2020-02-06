@@ -4,11 +4,22 @@
 - name: import os specific tasks
   include_tasks: "os_{{ ansible_os_family }}.yml"
 
-- name: install extension
+- name: install code extension
   shell: "code --install-extension {{ item }}"
   become: no
   register: result
-  when: 
+  when:
     - vscode_extension is defined
+    - vscode_install
+  loop: "{{ vscode_extension }}"
+  changed_when: result.stdout is not search('is already installed.')
+
+- name: install code-insiders extension
+  shell: "code-insiders --install-extension {{ item }}"
+  become: no
+  register: result
+  when:
+    - vscode_extension is defined
+    - vscode_insiders_install
   loop: "{{ vscode_extension }}"
   changed_when: result.stdout is not search('is already installed.')

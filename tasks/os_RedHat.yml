@@ -23,24 +23,19 @@
     - ansible_pkg_mgr == "dnf"
     - vscode_install
 
-#- name: install vscode insiders build
-#  yum:
-#    name: code-insiders
-#    state: present
-#    update_cache: yes
-#  when:
-#    - ansible_pkg_mgr == "yum"
-#    - vscode_insiders_install
+- name: install vscode insiders build
+  yum:
+    name: code-insiders
+    state: present
+    update_cache: yes
+  when:
+    - ansible_pkg_mgr == "yum"
+    - vscode_insiders_install
 
-#- name: install vscode insiders build
-#  dnf:
-#    name: code-insiders
-#    state: present
-#  when:
-#    - ansible_pkg_mgr == "dnf"
-#    - vscode_insiders_install
-
-- debug:
-    msg: "Microsoft doesn't support insider builds from the vs code repository. Let your voice be heard at https://github.com/Microsoft/vscode/issues/26307"
-  when: 
+- name: install vscode insiders build
+  dnf:
+    name: code-insiders
+    state: present
+  when:
+    - ansible_pkg_mgr == "dnf"
     - vscode_insiders_install

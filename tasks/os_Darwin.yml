@@ -1,0 +1,14 @@
+---
+
+- name: Check if Homebrew is installed
+  stat:
+    path: /usr/local/bin/brew
+  register: homebrew_installed
+
+- name: install vscode
+  homebrew_cask:
+    name: visual-studio-code
+    state: present
+  when:
+    - homebrew_installed
+    - vscode_install

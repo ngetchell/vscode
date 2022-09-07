@@ -6,7 +6,7 @@
 
 - name: install code extension
   shell: "code --install-extension {{ item }}"
-  become: no
+  become: false
   register: result
   when:
     - vscode_extension is defined
@@ -16,7 +16,7 @@
 
 - name: install code-insiders extension
   shell: "code-insiders --install-extension {{ item }}"
-  become: no
+  become: false
   register: result
   when:
     - vscode_extension is defined
